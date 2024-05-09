@@ -70,7 +70,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	xxd \
 	xz-utils \
 	zip \
-	&& rm -rf /var/lib/apt/lists/* \
+	&& rm -rf /var/lib/apt/lists/* && \
         pip3 install sympy pyyaml jsonschema
 
 # Asciidoctor PDF generator for generating the manual
