@@ -25,6 +25,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	g++-multilib \
 	git \
 	git-core \
+        graphviz \
+        default-jre \
+        libcairo2-dev \
+        libffi-dev \
+        libgdk-pixbuf2.0-dev \
+        libpango1.0-dev \
+        libxml2-dev \
+        libglib2.0-dev \
 	iproute2 \
 	iputils-ping \
 	libncurses5-dev \
@@ -37,6 +45,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	python3-pip \
 	rsync \
 	ruby \
+        ruby \
+        ruby-dev \
+        libgif-dev \
+        libwebp-dev \
+        libzstd-dev \
+        ruby-full \
+        gem \
+        npm \
+        texlive-latex-base \
+        texlive-fonts-recommended \
+        texlive-fonts-extra \
+        texlive-latex-extra \
+        texlive-science && \
 	socat \
 	ssh \
 	sshpass \
@@ -50,11 +71,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	xxd \
 	xz-utils \
 	zip \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+        pip3 install sympy pyyaml jsonschema
 
 # Asciidoctor PDF generator for generating the manual
-RUN gem install rake asciidoctor coderay json-schema rghost rouge hexapdf
-RUN gem install asciidoctor-pdf --version 1.6.2
+# RUN gem install rake asciidoctor coderay json-schema rghost rouge hexapdf
+RUN gem install asciidoctor-pdf
 
 RUN sed -i "s/# en_US\.UTF-8 UTF-8/en_US\.UTF-8 UTF-8/" /etc/locale.gen \
 	&& locale-gen \
