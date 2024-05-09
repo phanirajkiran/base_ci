@@ -53,6 +53,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Asciidoctor PDF generator for generating the manual
+RUN gem install rake asciidoctor coderay json-schema rghost rouge hexapdf
 RUN gem install asciidoctor-pdf --version 1.6.2
 
 RUN sed -i "s/# en_US\.UTF-8 UTF-8/en_US\.UTF-8 UTF-8/" /etc/locale.gen \
