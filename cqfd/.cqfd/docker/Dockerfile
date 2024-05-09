@@ -39,7 +39,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	libsdl1.2-dev \
 	libssl-dev \
 	locales \
-	python \
 	python3 \
 	python3-pexpect \
 	python3-pip \
